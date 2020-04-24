@@ -1,0 +1,44 @@
+<!doctype HTML>
+
+<head>
+	<title>CSGO GatherMate</title>
+	<link rel="stylesheet" href="main.css" />
+	<script type="text/javascript" src="jquery-3.5.0.min.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+</head>
+
+<body>
+	<header>
+		<img src="denyit-logo.png" />
+		<h1>GatherMate</h1>
+	</header>
+	<p>Participants (one nick per line or separated by ; depending on option selected)</p>
+	<fieldset id="radiogroup" style="border: none;">
+		<input type="radio" value="Newline" name="radiogroup" id="newline" />
+		<label for="newline">Separate nicks with linebreaks</label><br />
+		<input type="radio" value="Semicolon" name="radiogroup" id="semi" />	
+		<label for="semi">Separate nicks with semicolon</label>	
+	</fieldset>
+	<br />
+	<textarea placeholder="" id="nicklist"></textarea>
+	<input type="text" placeholder="nick1;nick2;nick3" id="nicksemi" style="display: none;" />
+	<br /><br />
+	<input type="button" value="Scramble teams" id="btnScramble" />
+
+	<h2>Results</h2>
+
+	<section id="team1">
+		<h3>Team 1</h3>
+		<ol id="listTeam1">
+
+		</ol>
+	</section>
+	<section id="team2">
+		<h3>Team 2</h3>
+		<ol id="listTeam2">
+
+		</ol>
+	</section>
+</body>
+
+

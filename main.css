@@ -1,0 +1,14 @@
+body {
+	max-width: 800px;
+	margin: auto;	
+}
+
+body *:not(h1) {
+	font-size: 1em;
+}
+
+img {
+	width: 40em;
+	display: block;
+	margin: auto;
+}
