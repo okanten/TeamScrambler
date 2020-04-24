@@ -12,3 +12,14 @@ img {
 	display: block;
 	margin: auto;
 }
+
+footer {
+	margin-top: 25%;
+	height: 5em;
+	max-width: 800px;
+	overflow: hidden;
+}
+
+footer p {
+	text-align: center;
+}
