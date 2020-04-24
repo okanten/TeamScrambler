@@ -1,6 +1,20 @@
 body {
 	max-width: 800px;
 	margin: auto;	
+	background-color: #222;
+	color: #aaa;
+}
+
+input, select, textarea {
+	background-color: #474747;
+	border: solid;
+	border-width: 0.1em;
+	color: #aaa;
+}
+
+input:focus, select:focus, textarea:focus {
+	background-color: #4f4f4f;
+	outline: none;
 }
 
 body *:not(h1) {
