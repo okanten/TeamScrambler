@@ -9,15 +9,59 @@ window.addEventListener("load", function() {
 		$("#nicksemi").css("display", "none");
 		$("#nicklist").css("display", "block");
 		nline = 1;
+		// grabFromOtherInputMethod("#nicksemi", "#nicklist");
 	})
 	$("#semi").click(function() {
 		nline = 0;
 		$("#nicksemi").css("display", "block");
 		$("#nicklist").css("display", "none");
+		// grabFromOtherInputMethod("#nicklist", "#nicksemi");
 	});
-	
+
+
+	addChangeListener("#nicklist", "\n");
+	addChangeListener("#nicksemi", ";");	
+
 })
 
+function grabFromOtherInputMethod(old, newBox) {
+	oldValue = $(old).val()
+	separator = "";
+	if (oldValue.includes(";")) {
+		nicks = $(old).val().split(";").filter(Boolean);
+		separator = "\n";
+	} else {
+		nicks = $(old).val().split("\n").filter(Boolean);
+		separator = ";";
+	}
+	newValue = "";
+	nicks.forEach(function(item, index) {
+		newValue += item + separator;
+	})
+	$(newBox).val(newValue);
+}
+
+function addChangeListener(inputField, splitChar) {
+	$(inputField).keyup(function(){
+		updateNumberNicks(inputField, splitChar)
+	});
+
+	$(inputField).keyup(function(){
+		updateNumberNicks(inputField, splitChar)
+	});
+
+	$(inputField).change(function(){
+		updateNumberNicks(inputField, splitChar)
+	});
+}
+
+function updateNumberNicks(inputField, splitChar) {
+	let lines = $(inputField).val().split(splitChar).filter(Boolean).length
+	even = (lines % 2);
+	color = (even ? "red" : "green");
+	$("#numberofnicks").text("Number of players: " + lines);
+	$("#numberofnicks").css("color", color);
+}
 
 function scrambleTeams() {
 	let nicks;

@@ -5,6 +5,7 @@
 	<link rel="stylesheet" href="main.css" />
 	<script type="text/javascript" src="jquery-3.5.0.min.js"></script>
 	<script type="text/javascript" src="main.js"></script>
+	<link rel="shortcut icon" href="favicon.ico" />
 </head>
 
 <body>
@@ -14,7 +15,7 @@
 	</header>
 	<p>Participants (one nick per line or separated by ; depending on option selected)</p>
 	<fieldset id="radiogroup" style="border: none;">
-		<input type="radio" value="Newline" name="radiogroup" id="newline" />
+		<input type="radio" value="Newline" name="radiogroup" checked="true" id="newline" />
 		<label for="newline">Separate nicks with linebreaks</label><br />
 		<input type="radio" value="Semicolon" name="radiogroup" id="semi" />	
 		<label for="semi">Separate nicks with semicolon</label>	
@@ -22,6 +23,7 @@
 	<br />
 	<textarea rows="11" placeholder="" id="nicklist"></textarea>
 	<input type="text" placeholder="nick1;nick2;nick3" id="nicksemi" style="display: none;" />
+	<p id="numberofnicks"></p>
 	<br /><br />
 	<input type="button" value="Scramble teams" id="btnScramble" />
 
